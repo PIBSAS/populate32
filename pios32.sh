@@ -117,7 +117,7 @@ sudo ln -s pyrcc5 pyside2-rcc
 sudo ln -s pyuic5 pyside2-uic
 cd
 echo "FreeCAD Source Code"
-wget -c https://github.com/FreeCAD/FreeCAD/archive/0.20.1zip
+wget -c https://github.com/FreeCAD/FreeCAD/archive/0.20.1.zip
 unzip 0.20.1.zip
 rm 0.20.1.zip
 mkdir freecad-build
