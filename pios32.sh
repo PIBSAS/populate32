@@ -151,24 +151,6 @@ make -j2
 sudo make install
 rm -rf box86
 sudo systemctl restart systemd-binfmt
-echo "WINE"
-sudo apt install -y libgtk2.0-0 libegl-mesa0 libgdm1 libgl1-mesas-dri libglapi-mesa libgles2-mesa 
-sudo apt install -y libglu1-mesa libglx-messa0 mesa-va-drivers mesa-vdpau-drivers mesa-vulkan-drivers
-sudo apt install -y libsdl1.2debian libsdl2-2.0-0 libsdl2-image-2.0-0 libudev1 libasound2 libasound2-plugins 
-sudo apt install -y libc6 libglib2.0-0 libgphoto2-6 libgphoto2-port12 libgstreamer-plugins-base1.0-0 libldap-2.4-2 
-sudo apt install -y libopenal1 libcap0.8 libpulse0 libsane1 libunwind8 libusb-1.0-0 libvkd3d1 libx11-6 libxext6 ocl-icd-libopencl1 
-sudo apt install -y libmpg123-0 libmpeg2-4 libmpeg2encpp-2.1-0 libncurses6 libtinfo5 libtinfo6 libxslt1.1 libcups2 libxcomposite1
-cd
-wget https://twisteros.com/wine.tgz -O ~/wine.tgz
-tar -xzvf ~/wine.tgz
-cd
-wget -c https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-sudo ln -s ~/wine/bin/wine /usr/local/bin/wine && sudo chmod +x /usr/local/bin/wine
-sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot && sudo chmod +x /usr/local/bin/wineboot
-sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg && sudo chmod +x /usr/local/bin/winecfg
-sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver && sudo chmod +x /usr/local/bin/wineserver
-sudo mv winetricks /usr/local/bin/ && sudo chmod +x /usr/local/bin/winetricks
-wine wineboot
 echo 'export BOX86_NOBANNER=1' >> ~/.bashrc
 echo "Media Player Daemon"
 sudo apt-get install -y mpd mpc
