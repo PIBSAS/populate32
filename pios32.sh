@@ -83,8 +83,8 @@ sudo apt install -y libocct*-dev
 sudo apt install -y occt-draw 
 sudo apt install -y libsimage-dev
 sudo apt install -y libspnav-dev
-sudo apt install -y checkinstal
-sudo apt install -y python3-markdo
+sudo apt install -y checkinstall
+sudo apt install -y python3-markdown
 sudo apt install -y python3-git
 sudo apt-get install pyqt5-dev
 sudo apt-get install pyqt5-dev-tools
@@ -136,6 +136,7 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 node-red-start
 echo "unrar-nonfree"
 echo "deb-src http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi" | sudo tee --append /etc/apt/sources.list
+sudo apt update
 cd $(mktemp -d)
 sudo apt build-dep unrar-nonfree -y
 sudo apt source -b unrar-nonfree
