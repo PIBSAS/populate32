@@ -121,6 +121,8 @@ wget -c https://github.com/FreeCAD/FreeCAD/archive/0.20.1.zip
 unzip 0.20.1.zip
 rm 0.20.1.zip
 mkdir freecad-build
+echo "Node RED"
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 echo "The Pi4j"
 curl -sSL https://pi4j.com/install | sudo bash
 echo "NodeJS"
@@ -131,9 +133,6 @@ sudo apt-get install gcc g++ make
 echo "Angular CLI"
 sudo npm install -g @angular/cli
 sudo npm install -g npm@latest
-echo "Node RED"
-bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
-node-red-start
 echo "unrar-nonfree"
 echo "deb-src http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi" | sudo tee --append /etc/apt/sources.list
 sudo apt update
