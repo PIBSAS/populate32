@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "UPdate"
+echo "Update"
 sudo apt update
 echo
 echo "Upgrade--Actualizar si hay algo que"
@@ -15,14 +15,14 @@ sudo apt install -y libwidevinecdm0
 echo "kodi DRM"
 sudo apt install -y kodi kodi-addon-dev kodi-inputstream-adaptive
 pip install pycryptodomex
-wget https://github.com/castagnait/repository.castagnait/raw/kodi/repository.castagnait-2.0.0.zip
+wget -c https://github.com/castagnait/repository.castagnait/raw/kodi/repository.castagnait-2.0.0.zip
 echo "Descomprimirlo en la carpeta que le corresponde"
 echo
 echo "Raspberry Pi Imager"
 sudo apt-get install -y rpi-imager
 echo "Plex"
 cd $HOME/Downloads/
-wget https://downloads.plex.tv/plex-media-server-new/1.29.2.6364-6d72b0cf6/debian/plexmediaserver_1.29.2.6364-6d72b0cf6_armhf.deb
+wget -c https://downloads.plex.tv/plex-media-server-new/1.29.2.6364-6d72b0cf6/debian/plexmediaserver_1.29.2.6364-6d72b0cf6_armhf.deb
 sudo dpkg -i plex*.deb
 rm plex*.deb
 echo "FreeCAD dependencies"
@@ -117,26 +117,23 @@ sudo ln -s pyrcc5 pyside2-rcc
 sudo ln -s pyuic5 pyside2-uic
 cd
 echo "FreeCAD Source Code"
-wget https://github.com/FreeCAD/FreeCAD/archive/0.20.1zip
+wget -c https://github.com/FreeCAD/FreeCAD/archive/0.20.1zip
 unzip 0.20.1.zip
 rm 0.20.1.zip
 mkdir freecad-build
 echo "The Pi4j"
 curl -sSL https://pi4j.com/install | sudo bash
 echo "NodeJS"
-sudo su
-curl -sL https://deb.nodesource.com/setup_18.x | bash -
-exit
+curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 cd
 sudo apt-get install -y nodejs
 sudo apt-get install gcc g++ make
 echo "Angular CLI"
 sudo npm install -g @angular/cli
-sudo npm install -g npm@9.1.3
+sudo npm install -g npm@latest
 echo "Node RED"
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 node-red-start
-exit
 echo "unrar-nonfree"
 echo "deb-src http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi" | sudo tee --append /etc/apt/sources.list
 cd $(mktemp -d)
@@ -165,7 +162,7 @@ cd
 wget https://twisteros.com/wine.tgz -O ~/wine.tgz
 tar -xzvf ~/wine.tgz
 cd
-wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+wget -c https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 sudo ln -s ~/wine/bin/wine /usr/local/bin/wine && sudo chmod +x /usr/local/bin/wine
 sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot && sudo chmod +x /usr/local/bin/wineboot
 sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg && sudo chmod +x /usr/local/bin/winecfg
