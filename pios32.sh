@@ -8,6 +8,7 @@ echo "Autoremove"
 sudo apt -y autoremove
 echo "Firmware Siano"
 sudo apt install -y firmware-siano
+sudo apt install -y dvb-apps
 echo "Kaffeine"
 sudo apt install -y kaffeine
 echo "Activate DRM Browser"
